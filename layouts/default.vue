@@ -1,36 +1,39 @@
 <template>
     <Title>{{ title }} </Title>
-    <div class="min-h-screen text-gray-900 ">
-        <nav class="bg-white shadow text-lg p-6">
-            <div class="container mx-auto flex items-center justify-between px-6">
+    <div class="min-h-screen text-gray-900 bg-stone-200">
+        <nav class="bg-white shadow text-lg ">
+            <div class="container mx-auto flex flex-wrap items-center justify-between h-20">
                 <div>
                     <NuxtLink to="/" ><img class="w-32" src="ng-logo.png" alt=""></NuxtLink>
                 </div>
                 <div>
-                    <ul class="flex space-x-12">
-                        <li><NuxtLink to="/om-oss">Om oss</NuxtLink></li>
-                        <li><NuxtLink to="/baerekraft">Bærekraft</NuxtLink></li>
-                        <li><NuxtLink to="/kontakt">Kontakt</NuxtLink></li>
-                        <li><NuxtLink to="/posts">Artikler</NuxtLink></li>
-                    </ul>
+                    <button class="relative z-50" @click="open = !open" >{{!open ? 'åpne' : 'lukk'}}</button>
+                    <Transition>
+                        <MegaMenu v-if="open" />
+                    </Transition>
                 </div>
             </div>
         </nav>
-        <div class="container mx-auto p-6">
+        <div class="container mx-auto">
             <slot />
         </div>
     </div>
 </template>
 
-<style scoped>
-nav ul li {
-    @apply hover:text-orange-600 transition-colors ;
+<style>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease;
 }
-.router-link-active { 
-    @apply text-stone-700 font-bold;
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
+
 </style>
 
 <script setup>
     const title = useState('title', () => "Norsk Gjenvinning")
+    const open = useState('open', false)
 </script>
