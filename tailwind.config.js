@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     'components/**/*.{vue,js}',
@@ -8,7 +10,12 @@ module.exports = {
     'error.vue' // or '*.vue'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ['Helvetica', 'Arial', 'sans-serif'],
+        'heading': ['Poppins', ...defaultTheme.fontFamily.sans]
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
