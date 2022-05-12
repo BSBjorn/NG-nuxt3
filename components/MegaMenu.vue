@@ -1,6 +1,6 @@
 <template>
     <div class="fixed inset-0 lg:w-[500px] bg-orange-600 lg:h-auto lg:mt-20 z-50 shadow">
-        <button class="absolute top-6 right-6" @click="open = !open">Lukk</button>
+        <button class="absolute top-6 right-6 text-white hover:text-stone-200 z-50" @click="open = !open">Lukk</button>
         <ul class="h-full flex flex-col space-y-4 items-center justify-center lg:items-start">
             <MenuItem v-for="item in menuItems" :key="index" :title="item.title" :url="item.url"
                 :children="item.children" />
