@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="py-4 lg:py-16 mx-4 md:mx-0">
-      <div class="grid grid-cols-2 gap-4 lg:gap-16">
+      <div class="grid md:grid-cols-2 gap-4 lg:gap-16">
         <PostItem v-for="post in mutatePosts()" :key="post.id" :post="post"/>
       </div>
     </div>
