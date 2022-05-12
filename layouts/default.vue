@@ -4,7 +4,7 @@
         <nav class="bg-white shadow text-lg px-4 z-50">
             <div class="container mx-auto flex flex-wrap items-center justify-between h-20">
                 <div>
-                    <NuxtLink to="/" ><img class="w-32 lg:w-48" src="ng-logo.png" alt=""></NuxtLink>
+                    <NuxtLink to="/" ><img class="w-32 lg:w-48" src="/ng-logo.png" alt=""></NuxtLink>
                 </div>
                 <ul class="hidden lg:flex space-x-16 font-heading">
                      <li class="hover:text-teal-700 transition-color"><NuxtLink :to="'/om-oss'" @click="open = false">Om oss</NuxtLink></li>
